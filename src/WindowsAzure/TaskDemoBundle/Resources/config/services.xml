@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <services>
+        <service id="windows_azure_task_demo.repository.task" class="WindowsAzure\TaskDemoBundle\Repository\TaskRepository"
+            factory-service="doctrine.orm.default_entity_manager"
+            factory-method="getRepository">
+            <argument>WindowsAzure\TaskDemoBundle\Entity\Task</argument>
+        </service>
+
+        <service id="windows_azure_task_demo.model.id_generator" class="WindowsAzure\TaskDemoBundle\Model\UUIDGenerator">
+            <argument type="service" id="doctrine.dbal.default_connection" />
+        </service>
+
+        <service id="windows_azure_task_demo.model.user_federation_listener" class="WindowsAzure\TaskDemoBundle\Model\UserFederationListener">
+            <argument type="service" id="security.context" />
+            <argument type="service" id="windows_azure_distribution.default_shard_manager" on-invalid="null"/>
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+        </service>
+    </services>
+</container>

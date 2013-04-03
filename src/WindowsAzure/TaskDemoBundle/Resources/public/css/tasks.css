@@ -1,0 +1,21 @@
+div.content {
+    width: 600px;
+    margin: auto;
+
+    font-family: Arial;
+}
+
+table {
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    padding: 0px;
+    margin: 0px;
+    border-spacing: 0px;
+    width: 100%;
+}
+table th, table td {
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 3px;
+    margin: 0px;
+}

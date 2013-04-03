@@ -1,0 +1,20 @@
+{% if name %}
+<p>Hello {{ name }}!</p>
+{% endif %}
+
+{% if names %}
+<p>Before you there were:</p>
+
+<ul>
+{% for name in names %}
+    <li>{{ name }} </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<p>Add a new name:</p>
+
+<form method="get" name="{{ path('hello') }}">
+    <input type="text" name="name" /> <input type="submit" value="My Name is.." />
+</form>
+

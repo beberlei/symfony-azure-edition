@@ -1,0 +1,34 @@
+security:
+    encoders:
+        WindowsAzure\TaskDemoBundle\Entity\User: sha1
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        main:
+            entity: { class: WindowsAzure\TaskDemoBundle\Entity\User, property: username }
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        azure:
+            pattern: ^/tasks
+            anonymous: true
+            form_login:
+                check_path: /tasks/login_check
+                login_path: /tasks/login
+                default_target_path: /tasks
+            logout:
+                path: /tasks/logout
+                target: /tasks/login
+
+    access_control:
+        - { path: ^/tasks/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tasks/register$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/tasks, roles: ROLE_USER }
+        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }

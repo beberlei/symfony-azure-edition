@@ -1,0 +1,12 @@
+{% extends "WindowsAzureTaskDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    <form action="{{ path('azure_register') }}" method="post">
+
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Register" class="btn btn-success">
+
+    </form>
+{% endblock %}
+

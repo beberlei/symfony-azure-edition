@@ -1,0 +1,33 @@
+{% extends "WindowsAzureTaskDemoBundle::layout.html.twig" %}
+
+{% block content %}
+    <div class="span7">
+        <p>There are <strong>{{ tasks|length }}</strong> tasks due.</p>
+
+        <table class="table">
+    {% for task in tasks %}
+            <tr>
+                <td width="60%">{{ task.subject }}</td>
+                <td width="20%">{% if task.type %}{{ task.type.label }}{% else %}-/-{% endif %}</td>
+                <td width="10%">{% if task.dueDate %}{{ task.dueDate|date('m/d/y') }}{% else %}-{% endif %}</td>
+                <td width="10%">
+                     <form method="post" action="{{ path('task_delete', {'id': task.id}) }}">
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+    {% endfor %}
+        </table>
+    </div>
+
+    <div class="span5">
+        <h2>Events ({{ events|length }})</h2>
+
+        <ul>
+        {% for event in events %}
+            <li>{{ event.message }} on {{ event.eventDate }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

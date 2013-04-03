@@ -1,0 +1,8 @@
+{% extends "WindowsAzureTaskDemoBundle::layout.html.twig" %}
+
+{% block content %}
+<form method="post" action="{{ path('task_create') }}">
+    {{ form_widget(form) }}
+    <input type="submit" value="Add Task" class="btn btn-success"/>
+</form>
+{% endblock %}

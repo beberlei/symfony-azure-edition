@@ -1,0 +1,19 @@
+{% extends "WindowsAzureTaskDemoBundle::layout.html.twig" %}
+
+{% block content %}
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+
+<form action="{{ path('azure_login_check') }}" method="post" class="form-inline">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="span2" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="_password" class="span2" />
+
+    <input type="submit" name="login" class="btn btn-primary" value="Login" />
+    <a class="btn" href="{{ path('azure_register') }}">Register account</a>
+</form>
+
+{% endblock %}
