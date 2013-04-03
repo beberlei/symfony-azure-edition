@@ -26,20 +26,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        var_dump($this->container->getParameter('kernel.cache_dir').'/appProdProjectContainer.php');
-        var_dump(file_exists($this->container->getParameter('kernel.cache_dir').'/appProdProjectContainer.php'));
-        var_dump(unserialize(file_get_contents($this->container->getParameter('kernel.cache_dir').'/appProdProjectContainer.php')));
-
-        var_dump($this->container->get('doctrine.dbal.default_connection')->getParams());
-
-        $env = array();
-        foreach ($_SERVER as $k => $v) {
-            if (strpos($k, "SYMFONY__")) {
-                $env[$k] = $v;
-            }
-        }
-        var_dump($env);
-
         return array();
     }
 
