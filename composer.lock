@@ -8,12 +8,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/beberlei/AzureDistributionBundle.git",
-                "reference": "cbf1031f9c77f24b79e92519ea98dddb1e36d993"
+                "reference": "c1e85d798c86e499b073c6fcb3f004ec659160cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beberlei/AzureDistributionBundle/zipball/cbf1031f9c77f24b79e92519ea98dddb1e36d993",
-                "reference": "cbf1031f9c77f24b79e92519ea98dddb1e36d993",
+                "url": "https://api.github.com/repos/beberlei/AzureDistributionBundle/zipball/c1e85d798c86e499b073c6fcb3f004ec659160cb",
+                "reference": "c1e85d798c86e499b073c6fcb3f004ec659160cb",
                 "shasum": ""
             },
             "require": {
@@ -37,7 +37,7 @@
                 }
             ],
             "description": "Integration of Windows Azure SDK and workflows into Symfony applications.",
-            "time": "2013-04-03 21:21:33"
+            "time": "2013-04-08 17:29:04"
         },
         {
             "name": "doctrine/common",
@@ -246,12 +246,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/KeyValueStore.git",
-                "reference": "a43f35c2ecfa3f8beb7ba83ada7d8c9cf9a7bcd4"
+                "reference": "f175e595db88ff75b1e1bd5e8fb9cb0ffa8966be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/KeyValueStore/zipball/a43f35c2ecfa3f8beb7ba83ada7d8c9cf9a7bcd4",
-                "reference": "a43f35c2ecfa3f8beb7ba83ada7d8c9cf9a7bcd4",
+                "url": "https://api.github.com/repos/doctrine/KeyValueStore/zipball/f175e595db88ff75b1e1bd5e8fb9cb0ffa8966be",
+                "reference": "f175e595db88ff75b1e1bd5e8fb9cb0ffa8966be",
                 "shasum": ""
             },
             "require": {
@@ -276,7 +276,7 @@
                 "MIT"
             ],
             "description": "Simple Key-Value Store Abstraction Layer that maps to PHP objects, allowing for many backends.",
-            "time": "2013-02-01 14:40:10"
+            "time": "2013-04-08 18:22:00"
         },
         {
             "name": "doctrine/orm",
@@ -1572,16 +1572,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.12.2",
+            "version": "v1.12.3",
             "source": {
                 "type": "git",
-                "url": "git://github.com/fabpot/Twig.git",
-                "reference": "v1.12.2"
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "v1.12.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/v1.12.2",
-                "reference": "v1.12.2",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/v1.12.3",
+                "reference": "v1.12.3",
                 "shasum": ""
             },
             "require": {
@@ -1617,7 +1617,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-02-09 18:21:53"
+            "time": "2013-04-08 12:40:11"
         }
     ],
     "packages-dev": [
