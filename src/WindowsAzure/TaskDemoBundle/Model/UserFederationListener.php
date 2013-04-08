@@ -14,7 +14,7 @@
 namespace WindowsAzure\TaskDemoBundle\Model;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
-use Doctrine\Shards\DBAL\ShardManager;
+use Doctrine\DBAL\Sharding\SQLAzure\SQLAzureShardManager;
 use WindowsAzure\TaskDemoBundle\Entity\User;
 
 /**
@@ -38,7 +38,7 @@ class UserFederationListener
      */
     private $shardManager;
 
-    public function __construct(SecurityContextInterface $security, ShardManager $shardManager = null)
+    public function __construct(SecurityContextInterface $security, SQLAzureShardManager $shardManager = null)
     {
         $this->security = $security;
         $this->shardManager = $shardManager;
@@ -70,6 +70,7 @@ class UserFederationListener
         }
 
         $this->shardManager->selectShard($user->getId());
+        // TODO: Detach user from EntityManager
     }
 }
 

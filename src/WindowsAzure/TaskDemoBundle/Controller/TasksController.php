@@ -78,7 +78,7 @@ class TasksController extends Controller
             $repository->add($task);
 
             $em = $this->container->get('doctrine.orm.default_entity_manager');
-            $em->flush();
+            $em->flush($task);
 
             $event = new TaskEvent($user, $task, TaskEvent::EVENT_CREATED, "Created Task '" . $task->getSubject() . "'");
 
@@ -103,6 +103,7 @@ class TasksController extends Controller
         $repository->remove($task);
 
         $em = $this->container->get('doctrine.orm.default_entity_manager');
+        $em->detach($user);
         $em->flush();
 
         $event = new TaskEvent($user, $task, TaskEvent::EVENT_DELETED, "Deleted Task '" . $task->getSubject() . "'");
