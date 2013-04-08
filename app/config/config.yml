@@ -65,3 +65,8 @@ windows_azure_distribution:
             default: %windows_azure_blob%
         table:
             default: %windows_azure_table%
+        federations:
+          default:
+            federationName: User_Federation
+            distributionKey: user_id
+            distributionType: guid
