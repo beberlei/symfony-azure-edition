@@ -1,5 +1,5 @@
 {
-    "name": "beberlei/framework-azure-edition",
+    "name": "beberlei/symfony-azure-edition",
     "license": "MIT",
     "description": "The \"Symfony Azure Edition\" distribution",
     "autoload": {
